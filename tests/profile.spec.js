@@ -9,7 +9,7 @@ let app;
 test.describe('Профиль пользователя',() => { //Пользователь регистрируется с помощью email и пароля перед каждым тестом
     test.beforeEach('Пользователь может зарегистрироваться с помощью email и пароля', async ({ page }) => {
         newUser = new UserBuilder().addBio().addEmail().addName().addPassword().generate();// Создание нового пользователя с помощью UserBuilder
-        app = new App(page); //Запустим приложение 
+        app = new App(page); 
         await app.mainPage.open(url); 
         await app.mainPage.register();
         await app.registerPage.register(newUser.userName, newUser.userEmail, newUser.userPassword);// Регистрация пользователя с помощью созданных данных
