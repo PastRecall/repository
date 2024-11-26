@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // Определяем класс с именем BasePage (Базовая Страница)
+=======
+// Определяем класс с именем BasePage (БазоваяСтраница)
+>>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
 // Классы в JavaScript используются для создания объектов с общими свойствами и методами
 class BasePage {
    // Конструктор, который вызывается при создании нового объекта класса BasePage
@@ -13,4 +17,8 @@ class BasePage {
        await this.page.goto(url);
     }
  }
+<<<<<<< HEAD
  export {BasePage}; 
+=======
+ export {BasePage};
+>>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b

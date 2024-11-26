@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
+<<<<<<< HEAD
 import { MainPage, RegisterPage, ArticlePage } from '../origin/pages/index';
+=======
+import { MainPage, RegisterPage, ArticklePage } from '../origin/pages/index';
+>>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
 
 const url = 'https://realworld.qa.guru/';
 let newUser;
@@ -29,20 +33,30 @@ test.describe('Публикация статьи',() => {
             articleBody: faker.lorem.sentence(),
             articleTags: faker.lorem.word(3),
         }
+<<<<<<< HEAD
         const settingsPage = new ArticlePage(page);
         await settingsPage.publish(newArticle.articleTitle,newArticle.articleDescription,newArticle.articleBody,newArticle.articleTags);
         await expect(page.locator('//main/div/div[1]/div/h1')).toContainText(newArticle.articleTitle);
         await expect(page.locator('//main/div/div[2]/div[1]/div/p')).toContainText(newArticle.articleBody);
         await expect(page.locator('//main/div/div[2]/div[1]/div/ul/li')).toContainText(newArticle.articleTags); 
+=======
+        const settingsPage = new ArticklePage(page);
+        await settingsPage.publish(newArticle.articleTitle,newArticle.articleDescription,newArticle.articleBody,newArticle.articleTags);
+>>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
     });
 
     test('Зарегистрированный пользователь может изменить собственную статью', async ({ page }) => {
         newArticle = {
             articleTitle: faker.person.jobTitle(),
         }
+<<<<<<< HEAD
         const settingsPage = new ArticlePage(page);
         await settingsPage.edit(newArticle.articleTitle);
         await expect(page.getByPlaceholder('Article Title')).toHaveValue(newArticle.articleTitle); 
+=======
+        const settingsPage = new ArticklePage(page);
+        await settingsPage.edit(newArticle.articleTitle);
+>>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
     });
 
 });
