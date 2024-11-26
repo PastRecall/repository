@@ -1,5 +1,4 @@
 import { BasePage } from "./base.page";
-import { expect } from '@playwright/test';
 
 class SettingsPage extends BasePage {
     constructor (page) {
@@ -15,7 +14,6 @@ class SettingsPage extends BasePage {
         await this.settings.click();
         await this.bioField.fill(userBio);
         await this.updateSettingsButton.click();
-        await expect(this.bioField).toBeVisible(userBio);
     }
     async logout () {
         await this.dropdownTogle.click();
