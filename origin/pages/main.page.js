@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { BasePage } from "./base.page"; // Импортируем базовый класс BasePage
 
-=======
-import { BasePage } from "./base.page";
->>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
 // Класс MainPage, который наследует (extends) свойства и методы от класса BasePage
 class MainPage extends BasePage{
     constructor (page) {
@@ -20,8 +16,5 @@ class MainPage extends BasePage{
 }
 export {MainPage};
 
-<<<<<<< HEAD
-//
-=======
->>>>>>> 7bdf436efcf3eeadce70b6346e6baab953a6e93b
+
  
