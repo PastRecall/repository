@@ -1,1 +1,1 @@
-Автотесты для веб-приложения https://realworld.qa.guru/ ^^
+Автотесты для веб-приложения https://realworld.qa.guru/ 
