@@ -1,6 +1,8 @@
 // импорты делаются в самом начале
 // Playwright — это фреймворк для автоматизации тестирования на стороне клиента, который позволяет писать тесты для веб-приложений
-import { test } from '@playwright/test';
+
+import { test, expect } from '@playwright/test';
+
 // Faker — библиотека для генерации фальшивых данных
 import { faker } from '@faker-js/faker';
 import { MainPage, RegisterPage} from '../origin/pages/index';

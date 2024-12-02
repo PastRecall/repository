@@ -14,7 +14,4 @@ class MainPage extends BasePage{
         await this.singupButton.click();
     }
 }
-export {MainPage};
-
-
- 
+export {MainPage}; 
