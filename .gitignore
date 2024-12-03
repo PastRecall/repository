@@ -3,3 +3,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/tests/fixture.test.js
+/origin/helpers/fixtures
+allure-report
+allure-results
+/tests/color.test.js

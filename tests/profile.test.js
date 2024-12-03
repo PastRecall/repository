@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allure } from "allure-playwright";
 import { App } from '../origin/pages/index'
 import { UserBuilder } from '../origin/helpers/index';
 
@@ -16,6 +17,8 @@ test.describe('Профиль пользователя',() => { //Пользов
     });
 
     test('Зарегистрированный пользователь может изменить биографию', async ({ page }) => {
+        await allure.owner("Akhatova"); //Владелец теста
+        await allure.tags("UI"); //Теги
         await app.settingsPage.modificationBio(newUser.userBio);
         await expect(app.settingsPage.bioField).toBeVisible(newUser.userBio);
     });

@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "allureOpen": "allure open",
+    "allureGenerate": "allure generate --clean",
     "debug": "npx playwright test --ui",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "testEnv": "export NODE_ENV=auto-test playwright test"
   },
   "keywords": [],
   "author": "tailed_question",
@@ -13,6 +16,11 @@
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.46.1",
-    "@types/node": "^22.5.0"
+    "@types/node": "^22.5.0",
+    "allure-playwright": "^3.0.6",
+    "os": "^0.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

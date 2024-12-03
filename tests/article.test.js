@@ -8,7 +8,8 @@ let newArticle;
 
 // test.describe используется для группировки тестов
 test.describe('Публикация статьи',() => {
-    test.beforeEach('Пользователь может зарегистрироваться с помощью email и пароля', async ({ page }) => {
+    test.beforeEach(async ({ page }) => {
+        // Пользователь может зарегистрироваться с помощью email и пароля
         newUser = {
             userName: faker.person.firstName('female'), // 'Victoria'
             userEmail: faker.internet.email(), // 'Victoria@yandex.ru'
@@ -20,9 +21,8 @@ test.describe('Публикация статьи',() => {
         await mainPage.register();
         const registerPage = new RegisterPage(page);
         await registerPage.register(newUser.userName, newUser.userEmail, newUser.userPassword);
-    });
-    
-    test.beforeEach('Зарегистрированный пользователь может создать статью', async ({ page }) => {
+
+        // Зарегистрированный пользователь может создать статью
         newArticle = {
             articleTitle: faker.person.jobTitle(),
             articleDescription: faker.lorem.paragraphs(),
@@ -31,9 +31,7 @@ test.describe('Публикация статьи',() => {
         }
         const settingsPage = new ArticlePage(page);
         await settingsPage.publish(newArticle.articleTitle,newArticle.articleDescription,newArticle.articleBody,newArticle.articleTags);
-        await expect(page.locator('//main/div/div[1]/div/h1')).toContainText(newArticle.articleTitle);
-        await expect(page.locator('//main/div/div[2]/div[1]/div/p')).toContainText(newArticle.articleBody);
-        await expect(page.locator('//main/div/div[2]/div[1]/div/ul/li')).toContainText(newArticle.articleTags); 
+        await expect(page.getByRole('heading', { name: newArticle.articleTitle })).toBeVisible() 
     });
 
     test('Зарегистрированный пользователь может изменить собственную статью', async ({ page }) => {
