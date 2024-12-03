@@ -11,6 +11,7 @@ class ArticlePage extends BasePage {
         this.publishArticle = this.page.getByRole('button', { name: 'Publish Article' });
         this.deleteArticle = this.page.getByRole('button', { name: 'Delete Article' }).nth(1);
         this.editArticle = this.page.getByRole('link', { name: 'Edit Article' }).first();
+        this.titleArticle = this.page.getByRole('heading');
     }
     async publish (articleTitle,articleDescription,articleBody,articleTags) {
         await this.newArticle.click();

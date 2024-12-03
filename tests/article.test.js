@@ -31,7 +31,7 @@ test.describe('Публикация статьи',() => {
         }
         const settingsPage = new ArticlePage(page);
         await settingsPage.publish(newArticle.articleTitle,newArticle.articleDescription,newArticle.articleBody,newArticle.articleTags);
-        await expect(page.getByRole('heading', { name: newArticle.articleTitle })).toBeVisible() 
+        await expect(settingsPage.titleArticle).toContainText(newArticle.articleTitle); 
     });
 
     test('Зарегистрированный пользователь может изменить собственную статью', async ({ page }) => {
@@ -40,7 +40,7 @@ test.describe('Публикация статьи',() => {
         }
         const settingsPage = new ArticlePage(page);
         await settingsPage.edit(newArticle.articleTitle);
-        await expect(page.getByPlaceholder('Article Title')).toHaveValue(newArticle.articleTitle); 
+        await expect(settingsPage.titleField).toHaveValue(newArticle.articleTitle); 
     });
 
 });
